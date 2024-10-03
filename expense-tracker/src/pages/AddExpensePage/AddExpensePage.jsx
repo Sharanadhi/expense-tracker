@@ -1,4 +1,5 @@
 import './AddExpensePage.scss';
+import categories from '../../data/categories.json'
 
 export default function AddExpensePage() {
   return (

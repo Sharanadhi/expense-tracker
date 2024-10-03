@@ -68,11 +68,12 @@
   }
 
   &__description-input,
-  &__value-input {
+  &__value-input,
+  &__category {
     @include form-field;
 
     width: 100%;
-    height: 2.5rem;
+    height: 3rem;
   }
 
   //   &__description-input {

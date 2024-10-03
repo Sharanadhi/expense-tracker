@@ -1,5 +1,5 @@
-@use './variables' as *;
-@use './animation' as *;
+@use "./variables" as *;
+@use "./animation" as *;
 
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -34,7 +34,8 @@
   min-width: 15rem;
   min-height: 2.25rem;
 
-  background-color: rgb(210, 196, 223);
+  // background-color: rgb(210, 196, 223);
+  background-color: #f5f5f5;
 
   resize: none;
 
