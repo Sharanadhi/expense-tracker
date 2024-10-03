@@ -1,13 +1,14 @@
 import './AddExpensePage.scss';
-import expenses from '../../data/expenses2.json';
+import axios from 'axios';
 import categories from '../../data/categories.json';
 
 import { useState } from 'react';
 
 export default function AddExpensePage() {
-  const [description, setDescription] = useState('');
-  const [value, setValue] = useState('');
-  const [category, setCategory] = useState('');
+  const baseUrl = 'http://localhost:8080/';
+  const [expense_description, setDescription] = useState('');
+  const [expense_value, setValue] = useState('');
+  const [category_name, setCategory] = useState('');
 
   const handleChangeDescription = (event) => {
     setDescription(event.target.value.trimStart());
@@ -21,15 +22,15 @@ export default function AddExpensePage() {
     setCategory(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    expenses.push({
-      id: `${expenses.length + 1}`,
-      category: category,
-      decription: description,
-      value: value,
+    const response = await axios.post(`${baseUrl}addExpense`, {
+      category_name,
+      expense_description,
+      expense_value,
     });
+    event.target.reset();
+    alert(response.data.message);
   };
 
   const handleCancel = (event) => {
@@ -51,7 +52,7 @@ export default function AddExpensePage() {
             id="category"
             className="add-expense__category"
             onChange={handleChangeCategory}
-            value={category}
+            value={category_name}
           >
             {categories.map((category) => (
               <option key={category.id} value={category.name}>
@@ -74,7 +75,7 @@ export default function AddExpensePage() {
               name="descriptionInput"
               placeholder="Add a description to your video"
               onChange={handleChangeDescription}
-              value={description}
+              value={expense_description}
             ></textarea>
           </div>
           <div className="add-expense__value-wrapper">
@@ -87,7 +88,7 @@ export default function AddExpensePage() {
               name="valueInput"
               placeholder="Add a value to your video"
               onChange={handleChangeValue}
-              value={value}
+              value={expense_value}
             ></textarea>
           </div>
         </div>

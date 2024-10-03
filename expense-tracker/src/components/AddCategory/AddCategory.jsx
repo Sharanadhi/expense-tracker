@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function AddCategory() {
   const baseUrl = 'http://localhost:8080/';
 
-  const [category, setCategory] = useState('');
+  const [category_name, setCategory] = useState('');
 
   const handleChangeCategory = (event) => {
     setCategory(event.target.value.trimStart());
@@ -12,8 +12,11 @@ export default function AddCategory() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(category_name);
 
-    const response = await axios.post(`${baseUrl}addCategory`, { category });
+    const response = await axios.post(`${baseUrl}addCategory`, {
+      category_name,
+    });
 
     event.target.reset();
     alert(response.data.message);
@@ -38,7 +41,7 @@ export default function AddCategory() {
             name="categoryInput"
             placeholder="Add a category"
             onChange={handleChangeCategory}
-            value={category}
+            value={category_name}
           ></textarea>
         </div>
         <div className="add-category__buttons-wrapper">
