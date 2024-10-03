@@ -1,9 +1,20 @@
+import { useState,useEffect } from 'react';
+import axios from 'axios'
+
 import './Expenses.scss'
-import expenses from '../../data/expenses2.json'
+// import expenses from '../../data/expenses2.json'
 
 
-function Expenses({expenseId}) {
-  console.log(expenseId);
+function Expenses() {
+  const baseUrl = 'http://localhost:8080/';
+  const [expenses,setExpenses] = useState([]);
+  useEffect(()=>{
+    const getExpenses = async () => {
+      const response = await axios.get(`${baseUrl}getExpenses`);
+      setExpenses(response.data.expenses);
+    }
+    getExpenses();
+  },[]);
   return (<section className="expenses">
     <ul className="expenses__list">
 

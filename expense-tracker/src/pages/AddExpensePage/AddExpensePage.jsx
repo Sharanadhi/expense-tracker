@@ -1,14 +1,22 @@
 import './AddExpensePage.scss';
+import { useState,useEffect } from 'react';
 import axios from 'axios';
-import categories from '../../data/categories.json';
-
-import { useState } from 'react';
+// import defaultCategories from '../../data/categories.json'
 
 export default function AddExpensePage() {
   const baseUrl = 'http://localhost:8080/';
+  const [categories, setCategory] = useState([]);
   const [expense_description, setDescription] = useState('');
   const [expense_value, setValue] = useState('');
-  const [category_name, setCategory] = useState('');
+  useEffect(()=>{
+    const getCategories = async () => {
+      const response = await axios.get(`${baseUrl}getCategories`);
+      setCategory(response.data.categories);
+    }
+    getCategories();
+  },[]);
+
+
 
   const handleChangeDescription = (event) => {
     setDescription(event.target.value.trimStart());
@@ -18,11 +26,14 @@ export default function AddExpensePage() {
     setValue(event.target.value.trimStart());
   };
 
-  const handleChangeCategory = (event) => {
-    setCategory(event.target.value);
-  };
+  // const handleChangeCategory = (event) => {
+  //   setCategory(event.target.value);
+  // };
+
+
 
   const handleSubmit = async (event) => {
+   const category_name = event.target.category.value;
     event.preventDefault();
     const response = await axios.post(`${baseUrl}addExpense`, {
       category_name,
@@ -51,9 +62,9 @@ export default function AddExpensePage() {
             name="category"
             id="category"
             className="add-expense__category"
-            onChange={handleChangeCategory}
-            value={category_name}
+           
           >
+            <option value="">Select category</option>
             {categories.map((category) => (
               <option key={category.id} value={category.name}>
                 {category.name}
