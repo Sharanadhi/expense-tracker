@@ -1,20 +1,24 @@
-import {Link} from 'react-router-dom'
-import './Header.scss'
+import { Link } from 'react-router-dom';
+import './Header.scss';
 
 function Header() {
-  return(
+  return (
     <header className="header">
       <section className="header__brand">
         <Link to={'/'}>
-        <h2 className="header__logo">Expense Tracker</h2>
+          <h2 className="header__logo">Expense Tracker</h2>
         </Link>
       </section>
-      <section className='header__links'>
-        <a href="#" className='header__link'>Add Category</a>
-        <Link to={'/addexpense'}  className='header__link'>Add Expense</Link>
+      <section className="header__links">
+        <Link to={'/addcategory'} className="header__link">
+          Add Category
+        </Link>
+        <Link to={'/addexpense'} className="header__link">
+          Add Expense
+        </Link>
       </section>
     </header>
-  )
+  );
 }
 
 export default Header;

@@ -22,36 +22,36 @@
     transform: rotate(360deg);
   }
 }
-.add-expense {
+.add-category {
   padding: 1.5rem 1rem 2rem;
 }
 @media screen and (min-width: 768px) {
-  .add-expense {
+  .add-category {
     padding: 1.5rem 2.5rem 1.5rem;
     width: 100%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .add-expense {
+  .add-category {
     padding: 2rem 8rem 1rem;
   }
 }
-.add-expense__page-title {
+.add-category__page-title {
   margin-bottom: 1rem;
   border-bottom: 1px solid darkslateblue;
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .add-expense__page-title {
+  .add-category__page-title {
     padding-bottom: 1.5rem;
     width: 100%;
   }
 }
-.add-expense__form {
+.add-category__form {
   width: 100%;
 }
 @media screen and (min-width: 1280px) {
-  .add-expense__form {
+  .add-category__form {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -61,38 +61,21 @@
          column-gap: 1.5rem;
   }
 }
-.add-expense__inputs-wrapper {
-  margin-top: 2.5rem;
-  width: 100%;
-}
-@media screen and (min-width: 1280px) {
-  .add-expense__inputs-wrapper {
-    width: 65%;
-    margin-bottom: 1rem;
-    margin-top: 0rem;
-  }
-}
-.add-expense__description-wrapper, .add-expense__value-wrapper {
+.add-category__wrapper {
   width: 100%;
   height: auto;
   margin-top: 1rem;
 }
 @media screen and (min-width: 1280px) {
-  .add-expense__description-wrapper, .add-expense__value-wrapper {
+  .add-category__wrapper {
     position: relative;
   }
 }
-@media screen and (min-width: 1280px) {
-  .add-expense__description-wrapper {
-    position: relative;
-    margin-top: 1.5rem;
-  }
-}
-.add-expense__description-label, .add-expense__value-label {
+.add-category__label {
   color: black;
   margin-bottom: 0.25rem;
 }
-.add-expense__description-input, .add-expense__value-input {
+.add-category__input {
   border: 1px solid darkslateblue;
   border-radius: 4px;
   padding: 0.75rem;
@@ -104,34 +87,34 @@
   width: 100%;
   height: 2.5rem;
 }
-.add-expense__description-input:focus, .add-expense__value-input:focus {
+.add-category__input:focus {
   border: 2px solid blueviolet;
 }
-.add-expense__description-input--error, .add-expense__value-input--error {
+.add-category__input--error {
   border-color: red;
   animation: input-error 20ms linear alternate 5;
 }
 @media screen and (min-width: 768px) {
-  .add-expense__description-input, .add-expense__value-input {
+  .add-category__input {
     padding: 0.5rem;
     height: 2.5rem;
   }
 }
-.add-expense__error-msg {
+.add-category__error-msg {
   color: red;
 }
 @media screen and (min-width: 1280px) {
-  .add-expense__error-msg {
+  .add-category__error-msg {
     position: absolute;
   }
 }
-.add-expense__buttons-wrapper {
+.add-category__buttons-wrapper {
   margin-top: 1rem;
   border-top: 1px solid darkslateblue;
   padding-top: 1.5rem;
 }
 @media screen and (min-width: 768px) {
-  .add-expense__buttons-wrapper {
+  .add-category__buttons-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -142,7 +125,7 @@
     width: 100%;
   }
 }
-.add-expense__publish-button {
+.add-category__button {
   border-radius: 4px;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -152,30 +135,30 @@
   background-color: blueviolet;
   color: white;
 }
-.add-expense__publish-button:hover {
+.add-category__button:hover {
   background-color: darkslateblue;
 }
-.add-expense__publish-button:active {
+.add-category__button:active {
   transform: scale(95%);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 768px) {
-  .add-expense__publish-button {
+  .add-category__button {
     padding-left: 2rem;
     padding-right: 2rem;
     max-width: 12rem;
   }
 }
-.add-expense__publish-button {
+.add-category__button {
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .add-expense__publish-button {
+  .add-category__button {
     margin-bottom: 0rem;
     order: 2;
   }
 }
-.add-expense__cancel-button {
+.add-category__cancel-button {
   border-radius: 4px;
   border: 1px solid blueviolet;
   background-color: white;
@@ -186,23 +169,23 @@
   color: blueviolet;
   cursor: pointer;
 }
-.add-expense__cancel-button:hover {
+.add-category__cancel-button:hover {
   color: darkslateblue;
   border-color: darkslateblue;
 }
-.add-expense__cancel-button:active {
+.add-category__cancel-button:active {
   transform: scale(95%);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 768px) {
-  .add-expense__cancel-button {
+  .add-category__cancel-button {
     padding-left: 2rem;
     padding-right: 2rem;
     max-width: 12rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .add-expense__cancel-button {
+  .add-category__cancel-button {
     order: 1;
   }
-}/*# sourceMappingURL=AddExpensePage.css.map */
+}/*# sourceMappingURL=AddCategory.css.map */

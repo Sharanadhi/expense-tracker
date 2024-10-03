@@ -1,6 +1,6 @@
 @use '../../styles/partials/mixins' as *;
 
-.add-expense {
+.add-category {
   padding: 1.5rem 1rem 2rem;
 
   @include tablet {
@@ -32,18 +32,7 @@
     }
   }
 
-  &__inputs-wrapper {
-    margin-top: 2.5rem;
-    width: 100%;
-    @include desktop {
-      width: 65%;
-      margin-bottom: 1rem;
-      margin-top: 0rem;
-    }
-  }
-
-  &__description-wrapper,
-  &__value-wrapper {
+  &__wrapper {
     width: 100%;
     height: auto;
     margin-top: 1rem;
@@ -53,22 +42,12 @@
     }
   }
 
-  &__description-wrapper {
-    @extend .add-expense__value-wrapper;
-    @include desktop {
-      position: relative;
-      margin-top: 1.5rem;
-    }
-  }
-
-  &__description-label,
-  &__value-label {
+  &__label {
     color: black;
     margin-bottom: 0.25rem;
   }
 
-  &__description-input,
-  &__value-input {
+  &__input {
     @include form-field;
 
     width: 100%;
@@ -111,7 +90,7 @@
     }
   }
 
-  &__publish-button {
+  &__button {
     @include button;
 
     & {

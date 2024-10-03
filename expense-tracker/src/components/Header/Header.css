@@ -1,0 +1,13 @@
+.header {
+  padding: 2.4rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+}
+.header__link {
+  margin-left: 2rem;
+}/*# sourceMappingURL=Header.css.map */

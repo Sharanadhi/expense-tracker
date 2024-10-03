@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes input-error {
+  from {
+    transform: translateX(1rem);
+  }
+  to {
+    transform: translateX(initial);
+  }
+}
+@keyframes page-not-found {
+  0% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(20vw);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -21,4 +45,26 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-} /*# sourceMappingURL=App.css.map */
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1rem;
+}
+
+a {
+  text-decoration: none;
+}/*# sourceMappingURL=App.css.map */
