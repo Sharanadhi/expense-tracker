@@ -104,7 +104,7 @@
     border-top: 1px solid darkslateblue;
     padding-top: 1.5rem;
     @include tablet {
-      @include flexbox(row, flex-end, flex-start);
+      @include flexbox(row, center, flex-start);
       column-gap: 1rem;
       margin-top: 1.5rem;
 

@@ -11,10 +11,10 @@ function Header() {
       </section>
       <section className="header__links">
         <Link to={'/addcategory'} className="header__link">
-          Add Category
+          Category
         </Link>
         <Link to={'/addexpense'} className="header__link">
-          Add Expense
+          Expense
         </Link>
       </section>
     </header>

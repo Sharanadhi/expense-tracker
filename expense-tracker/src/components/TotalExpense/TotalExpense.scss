@@ -1,11 +1,11 @@
 .totalExpense {
   &__card {
-    width: 48rem;
-    height: 24rem;
+    width: auto;
+    height: auto;
     margin: 2.4rem;
     padding: 2.4rem;
     border-radius: 24px;
-    background-color: #032b43;
+    background-color: darkslateblue;
     color: #fff;
   }
   &__amount {
