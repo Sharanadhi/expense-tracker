@@ -2,7 +2,6 @@ import { useState,useEffect } from 'react';
 import axios from 'axios'
 
 import './Expenses.scss'
-// import expenses from '../../data/expenses2.json'
 
 
 function Expenses() {
@@ -23,7 +22,7 @@ function Expenses() {
     expenses.map((expense) => (
       <li key={expense.id} className="expenses__item">
       <div className='expenses__details'>
-      <p className="expenses__description">{expense.decription}</p>
+      <p className="expenses__description">{expense.description}</p>
       <p className="expenses__category">{expense.category}</p>
       </div>
       <div>

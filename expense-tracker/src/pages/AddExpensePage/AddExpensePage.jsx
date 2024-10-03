@@ -1,7 +1,6 @@
 import './AddExpensePage.scss';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-// import defaultCategories from '../../data/categories.json'
 
 export default function AddExpensePage() {
   const baseUrl = 'http://localhost:8080/';
@@ -34,6 +33,7 @@ export default function AddExpensePage() {
 
   const handleSubmit = async (event) => {
    const category_name = event.target.category.value;
+   console.log(category_name);
     event.preventDefault();
     const response = await axios.post(`${baseUrl}addExpense`, {
       category_name,
@@ -61,8 +61,7 @@ export default function AddExpensePage() {
           <select
             name="category"
             id="category"
-            className="add-expense__category"
-           
+            className="add-expense__category"           
           >
             <option value="">Select category</option>
             {categories.map((category) => (
