@@ -1,0 +1,128 @@
+@use './variables' as *;
+@use './animation' as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flexbox(
+  $flex-direction: row,
+  $justify-content: center,
+  $align-items: center
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin form-field {
+  border: 1px solid darkslateblue;
+  border-radius: 4px;
+
+  padding: 0.75rem;
+
+  width: 100%;
+  min-width: 15rem;
+  min-height: 2.25rem;
+
+  background-color: rgb(210, 196, 223);
+
+  resize: none;
+
+  &:focus {
+    border: 2px solid blueviolet;
+  }
+
+  &--error {
+    border-color: red;
+    animation: input-error 20ms linear alternate 5;
+  }
+
+  @include tablet {
+    padding: 0.5rem;
+    height: 2.5rem;
+  }
+}
+
+@mixin button {
+  border-radius: 4px;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  height: 2.5rem;
+  width: 100%;
+
+  cursor: pointer;
+
+  background-color: blueviolet;
+
+  color: white;
+
+  &:hover {
+    background-color: darkslateblue;
+  }
+
+  &:active {
+    transform: scale(95%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    max-width: 9.375rem;
+  }
+}
+
+@mixin cancel-button {
+  border-radius: 4px;
+  border: 1px solid blueviolet;
+  background-color: white;
+  height: 2.5rem;
+  width: 100%;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  color: blueviolet;
+
+  cursor: pointer;
+
+  &:hover {
+    color: darkslateblue;
+    border-color: darkslateblue;
+  }
+
+  &:active {
+    transform: scale(95%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    max-width: 9.375rem;
+  }
+}
+
+@mixin loading {
+  border: 16px solid lightgrey;
+  border-radius: 50%;
+  border-top: 16px solid blueviolet;
+  border-bottom: 16px solid blueviolet;
+  width: 5rem;
+  height: 5rem;
+  animation: loading 2s linear infinite;
+}

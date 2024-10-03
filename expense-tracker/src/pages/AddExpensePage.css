@@ -1,0 +1,208 @@
+@keyframes input-error {
+  from {
+    transform: translateX(1rem);
+  }
+  to {
+    transform: translateX(initial);
+  }
+}
+@keyframes page-not-found {
+  0% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(20vw);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.add-expense {
+  padding: 1.5rem 1rem 2rem;
+}
+@media screen and (min-width: 768px) {
+  .add-expense {
+    padding: 1.5rem 2.5rem 1.5rem;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .add-expense {
+    padding: 2rem 8rem 1rem;
+  }
+}
+.add-expense__page-title {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid darkslateblue;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .add-expense__page-title {
+    padding-bottom: 1.5rem;
+    width: 100%;
+  }
+}
+.add-expense__form {
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .add-expense__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.add-expense__inputs-wrapper {
+  margin-top: 2.5rem;
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .add-expense__inputs-wrapper {
+    width: 65%;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+}
+.add-expense__description-wrapper, .add-expense__value-wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 1280px) {
+  .add-expense__description-wrapper, .add-expense__value-wrapper {
+    position: relative;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .add-expense__description-wrapper {
+    position: relative;
+    margin-top: 1.5rem;
+  }
+}
+.add-expense__description-label, .add-expense__value-label {
+  color: black;
+  margin-bottom: 0.25rem;
+}
+.add-expense__description-input, .add-expense__value-input {
+  border: 1px solid darkslateblue;
+  border-radius: 4px;
+  padding: 0.75rem;
+  width: 100%;
+  min-width: 15rem;
+  min-height: 2.25rem;
+  background-color: rgb(210, 196, 223);
+  resize: none;
+  width: 100%;
+  height: 2.5rem;
+}
+.add-expense__description-input:focus, .add-expense__value-input:focus {
+  border: 2px solid blueviolet;
+}
+.add-expense__description-input--error, .add-expense__value-input--error {
+  border-color: red;
+  animation: input-error 20ms linear alternate 5;
+}
+@media screen and (min-width: 768px) {
+  .add-expense__description-input, .add-expense__value-input {
+    padding: 0.5rem;
+    height: 2.5rem;
+  }
+}
+.add-expense__error-msg {
+  color: red;
+}
+@media screen and (min-width: 1280px) {
+  .add-expense__error-msg {
+    position: absolute;
+  }
+}
+.add-expense__buttons-wrapper {
+  margin-top: 1rem;
+  border-top: 1px solid darkslateblue;
+  padding-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .add-expense__buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+.add-expense__publish-button {
+  border-radius: 4px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2.5rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+}
+.add-expense__publish-button:hover {
+  background-color: darkslateblue;
+}
+.add-expense__publish-button:active {
+  transform: scale(95%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 768px) {
+  .add-expense__publish-button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 9.375rem;
+  }
+}
+.add-expense__publish-button {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .add-expense__publish-button {
+    margin-bottom: 0rem;
+    order: 2;
+  }
+}
+.add-expense__cancel-button {
+  border-radius: 4px;
+  border: 1px solid blueviolet;
+  background-color: white;
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: blueviolet;
+  cursor: pointer;
+}
+.add-expense__cancel-button:hover {
+  color: darkslateblue;
+  border-color: darkslateblue;
+}
+.add-expense__cancel-button:active {
+  transform: scale(95%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 768px) {
+  .add-expense__cancel-button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 9.375rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .add-expense__cancel-button {
+    order: 1;
+  }
+}/*# sourceMappingURL=AddExpensePage.css.map */

@@ -1,0 +1,26 @@
+@keyframes input-error {
+  from {
+    transform: translateX(1rem);
+  }
+  to {
+    transform: translateX(initial);
+  }
+}
+
+@keyframes page-not-found {
+  0% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(20vw);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
