@@ -1,47 +1,29 @@
 import './Expenses.scss'
+import expenses from '../../data/expenses.json'
 
-function Expenses() {
+
+function Expenses({expenseId}) {
+console.log(expenseId);
+const expense = expenses.find((expense)=> {
+  expense.id == expenseId
+  });
+console.log(expense);
+
   return (<section className="expenses">
     <ul className="expenses__list">
+    {expenses.map((expense) => {
       <li className="expenses__item">
-        <div className='expenses__details'>
-        <p className="expenses__name">Item 1</p>
-        <p className="expenses__category">Grocery</p>
-        </div>
-        <div>
-        <p className="expenses__price">$10.00</p>
-        </div>
-      </li>
-
-      <li className="expenses__item">
-        <div className='expenses__details'>
-        <p className="expenses__name">Item 2</p>
-        <p className="expenses__category">Clothing</p>
-        </div>
-        <div>
-        <p className="expenses__price">$75.00</p>
-        </div>
-      </li>
-
-      <li className="expenses__item">
-        <div className='expenses__details'>
-        <p className="expenses__name">Item 3</p>
-        <p className="expenses__category">Transport</p>
-        </div>
-        <div>
-        <p className="expenses__price">$28.00</p>
-        </div>
-      </li>
-
-      <li className="expenses__item">
-        <div className='expenses__details'>
-        <p className="expenses__name">Item 4</p>
-        <p className="expenses__category">Food</p>
-        </div>
-        <div>
-        <p className="expenses__price">$14.00</p>
-        </div>
-      </li>
+      <div className='expenses__details'>
+      <p className="expenses__description"></p>
+      <p className="expenses__category">{expense.category}</p>
+      </div>
+      <div>
+      <p className="expenses__price">$10.00</p>
+      </div>
+    </li>
+    })
+}
+     
      
     </ul>
   </section>)

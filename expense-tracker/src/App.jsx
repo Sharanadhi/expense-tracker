@@ -1,17 +1,22 @@
-import AddExpensePage from './pages/AddExpensePage.jsx';
-import './App.scss';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+
 import Header from './components/Header/Header'
-import TotalExpense from './components/TotalExpense/TotalExpense'
-import Expenses from './components/Expenses/Expenses'
+import HomePage from './pages/HomePage/HomePage.jsx'
+import AddExpensePage from './pages/AddExpensePage/AddExpensePage.jsx';
+import ExpensesPage from "./pages/ExpensesPage/ExpensesPage.jsx";
 import './App.scss'
 
 function App() {
   return (
     <>
-      <AddExpensePage />
+    <BrowserRouter>
       <Header />
-      <TotalExpense />
-      <Expenses />
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/expense/:expenseId" element={< ExpensesPage/>} />
+      <Route path="/addexpense" element={<AddExpensePage />} />
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }

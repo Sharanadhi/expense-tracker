@@ -1,0 +1,39 @@
+[
+  {
+      "id": 1,
+      "category": "grocery",
+      "items": [
+              {
+                  "id": 1,
+                  "decription": "fruits",
+                  "value": 30
+              },
+              {
+                  "id": 2,
+                  "decription": "bread",
+                  "value": 10
+              },
+              {
+                  "id": 3,
+                  "decription": "bread",
+                  "value": 10
+              }
+      ]
+  },
+  {
+      "id": 2,
+      "category": "pharmacy",
+      "items": [
+              {
+                  "id": 1,
+                  "decription": "advil",
+                  "value": 30
+              },
+              {
+                  "id": 2,
+                  "decription": "tylenol",
+                  "value": 10
+              }
+      ]
+  }
+]
