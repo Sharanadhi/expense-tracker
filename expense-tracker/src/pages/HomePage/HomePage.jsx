@@ -1,11 +1,11 @@
 import TotalExpense from "../../components/TotalExpense/TotalExpense"
-import CategoryList from "../../components/CategoryList/CategoryList"
+import Expenses from "../../components/Expenses/Expenses"
 
 function HomePage() {
   return (
     <>
      <TotalExpense />
-     <CategoryList />
+     <Expenses />
     </>
   )
 }
