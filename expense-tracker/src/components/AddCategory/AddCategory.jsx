@@ -1,19 +1,22 @@
+import axios from 'axios';
 import './AddCategory.scss';
-import categories from '../../data/categories.json';
 import { useState } from 'react';
 export default function AddCategory() {
+  const baseUrl = 'http://localhost:8080/';
+
   const [category, setCategory] = useState('');
 
   const handleChangeCategory = (event) => {
     setCategory(event.target.value.trimStart());
   };
 
-  const handleSubmit = (event) => {
-    const form = event.target;
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    categories.push({ id: `${categories.length + 1}`, name: `${category}` });
-    console.log(categories);
+    const response = await axios.post(`${baseUrl}addCategory`, { category });
+
+    event.target.reset();
+    alert(response.data.message);
   };
 
   const handleCancel = (event) => {
