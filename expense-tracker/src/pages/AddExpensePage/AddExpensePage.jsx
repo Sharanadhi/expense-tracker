@@ -15,9 +15,7 @@ export default function AddExpensePage() {
             id="category"
             className="add-expense__category"
           >
-            <option value="groceries">Groceries</option>
-            <option value="uber">Uber</option>
-            <option value="pharmacy">Pharmacy</option>
+            {categories.map((category) => (<option key={category.id} value={category.name}>{category.name}</option>))}
           </select>
         </div>
         <div className="add-expense__inputs-wrapper">
