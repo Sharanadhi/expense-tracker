@@ -1,0 +1,11 @@
+@use "../../styles/partials/mixins" as *;
+
+.expenseFilter {
+  padding: 0 2.4rem;
+  margin-top: 2.4rem;
+  &__option {
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid #fafafa;
+  }
+}

@@ -15,25 +15,16 @@ export default function AddExpensePage() {
     getCategories();
   },[]);
 
-
-
   const handleChangeDescription = (event) => {
     setDescription(event.target.value.trimStart());
   };
-
+  
   const handleChangeValue = (event) => {
     setValue(event.target.value.trimStart());
   };
 
-  // const handleChangeCategory = (event) => {
-  //   setCategory(event.target.value);
-  // };
-
-
-
   const handleSubmit = async (event) => {
    const category_name = event.target.category.value;
-   console.log(category_name);
     event.preventDefault();
     const response = await axios.post(`${baseUrl}addExpense`, {
       category_name,
@@ -43,7 +34,7 @@ export default function AddExpensePage() {
     event.target.reset();
     alert(response.data.message);
   };
-
+  
   const handleCancel = (event) => {
     event.preventDefault();
     setValue('');
