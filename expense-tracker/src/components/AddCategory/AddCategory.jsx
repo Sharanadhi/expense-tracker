@@ -14,7 +14,7 @@ export default function AddCategory() {
     event.preventDefault();
     console.log(category_name);
 
-    const response = await axios.post(`${baseUrl}addCategory`, {
+    const response = await axios.post(`${baseUrl}category/addCategory`, {
       category_name,
     });
 

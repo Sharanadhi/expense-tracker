@@ -9,7 +9,7 @@ export default function AddExpensePage() {
   const [expense_value, setValue] = useState('');
   useEffect(()=>{
     const getCategories = async () => {
-      const response = await axios.get(`${baseUrl}getCategories`);
+      const response = await axios.get(`${baseUrl}category/getCategories`);
       setCategory(response.data.categories);
     }
     getCategories();
@@ -24,16 +24,27 @@ export default function AddExpensePage() {
   };
 
   const handleSubmit = async (event) => {
-   const category_name = event.target.category.value;
     event.preventDefault();
-    const response = await axios.post(`${baseUrl}addExpense`, {
-      category_name,
-      expense_description,
-      expense_value,
-    });
-    event.target.reset();
-    alert(response.data.message);
+    console.log(event.target);
+    const category_name = event.target.category.value;
+    const expense_description = event.target.descriptionInput.value;
+    const expense_value = event.target.valueInput.value;
+    try {
+      const response = await axios.post(`${baseUrl}expenses/addExpense`, {
+        category_name,
+        expense_description,
+        expense_value,
+      });
+      event.target.reset();
+      setValue('');
+      setDescription('');
+      alert(response.data.message);
+    } catch (error) {
+      console.error("There was an error submitting the form:", error);
+      alert("Failed to submit the form. Please try again.");
+    }
   };
+  
   
   const handleCancel = (event) => {
     event.preventDefault();
@@ -74,20 +85,20 @@ export default function AddExpensePage() {
               id="descriptionInput"
               className="add-expense__description-input"
               name="descriptionInput"
-              placeholder="Add a description to your video"
+              placeholder="Add expense description"
               onChange={handleChangeDescription}
               value={expense_description}
             ></textarea>
           </div>
           <div className="add-expense__value-wrapper">
             <label htmlFor="valueInput" className="add-expense__value-label">
-              Value ($)
+              Expense ($)
             </label>
             <textarea
               id="valueInput"
               className="add-expense__value-input"
               name="valueInput"
-              placeholder="Add a value to your video"
+              placeholder="Add expense"
               onChange={handleChangeValue}
               value={expense_value}
             ></textarea>

@@ -13,7 +13,7 @@ function HomePage() {
 
   useEffect(()=>{
     const getExpenses = async () => {
-      const response = await axios.get(`${baseUrl}getExpenses`);
+      const response = await axios.get(`${baseUrl}expenses/getExpenses`);
       setExpenses(response.data.expenses);
       const expense=response.data.expenses;
       const total = expense.reduce((acc, item) => acc + Number(item.value), 0);
@@ -21,7 +21,7 @@ function HomePage() {
     }
 
     const getCategories = async () => {
-      const response = await axios.get(`${baseUrl}getCategories`);
+      const response = await axios.get(`${baseUrl}category/getCategories`);
       setCategory(response.data.categories);    
     }
 
@@ -33,7 +33,7 @@ function HomePage() {
     <>
      <ExpenseFilter categories={categories} updateExpenses={setExpenses} updateExpense={setExpense}/>  
      <TotalExpense expense={totalExpense}/>   
-     <Expenses expenses={expenses}/>
+     <Expenses expenses={expenses} updateExpenses={setExpenses} updateExpense={setExpense}/>
     </>
   )
 }

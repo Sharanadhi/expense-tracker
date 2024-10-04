@@ -7,29 +7,39 @@ function ExpenseFilter({categories,updateExpenses,updateExpense}) {
     e.preventDefault();
     const category_name=e.target.value;
     if(category_name){
-      const response = await axios.post(`${baseUrl}filterExpenses`,{category:category_name});
+      const response = await axios.post(`${baseUrl}expenses/filterExpenses`,{category:category_name});
       updateExpenses(response.data.expenses)
       const total = response.data.expenses.reduce((acc, item) => acc + Number(item.value), 0);
       updateExpense(total);
     }else{
-      const response = await axios.get(`${baseUrl}getExpenses`);
+      const response = await axios.get(`${baseUrl}expenses/getExpenses`);
       updateExpenses(response.data.expenses);
       const total = response.data.expenses.reduce((acc, item) => acc + Number(item.value), 0);
       updateExpense(total);
     }
-   
+  }
+
+  const clearfilter = async () => {
+    const response = await axios.get(`${baseUrl}expenses/getExpenses`);
+    updateExpenses(response.data.expenses);
+    const total = response.data.expenses.reduce((acc, item) => acc + Number(item.value), 0);
+    updateExpense(total);
+    document.querySelector('.expenseFilter__form').reset();
   }
 
   return (
     <section className="expenseFilter">
-      <select name="category" className="expenseFilter__option" onChange={filterExpenses}>
-        <option value=''>Select category</option>
-        {categories.map((category) => (
-          <option key={category.id} value={category.name}>
-            {category.name}
-          </option>
-        ))}
-      </select>
+      <form className="expenseFilter__form">
+        <select name="category" id="category" className="expenseFilter__option" onChange={filterExpenses}>
+          <option value=''>Select category</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+        <button className='expenseFilter__button' onClick={clearfilter}>Clear</button>
+      </form>
     </section>
   )
 }
